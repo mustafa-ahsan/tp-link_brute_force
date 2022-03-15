@@ -2,7 +2,7 @@ import requests
 import hashlib
 import base64
 from simple_colors import *
-iprt = '192.168.0.1'
+iprt = input("Enter ip router: ")
 #opne file is loop 
 listpas = input("Enter password list: ")
 passinpot = open(listpas, 'r').readlines()
