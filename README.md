@@ -23,3 +23,16 @@ Firmware Version:
 3.17.1 Build 170407 Rel.68462n
 Hardware Version:
 WR940N v6 00000000
+
+نفذ ذني الاوامر قبل لا تبدي
+
+pip install requests
+
+
+pip install hashlib
+
+
+pip install base64
+
+
+pip install colorama
