@@ -36,3 +36,7 @@ pip install base64
 
 
 pip install colorama
+
+
+
+pip install fake_useragent
